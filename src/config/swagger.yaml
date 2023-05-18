@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Devjobs-List
+  description: Devjobs web app API
+  version: 0.1.9
+
+servers:
+  - url: https://web-production-ec13.up.railway.app/api
+    description: production server
+  - url: http://localhost:5555/api
+    description: local server
+paths:
+  /joblist:
+    get:
+      tags:
+        - Joblist
+      responses:
+        "2oo":
+          description: Succesfully fetched
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
