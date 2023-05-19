@@ -10,10 +10,27 @@ servers:
   - url: http://localhost:5555/api
     description: local server
 paths:
-  /joblist:
+  /joblist/{size}/{page}:
     get:
       tags:
         - Joblist
+      parameters:
+        - name: size
+          in: path
+          description: The number of jobs per page
+          required: true
+          schema:
+            type: integer
+            example: 6
+            required: true
+        - name: page
+          in: path
+          description: The page number
+          required: true
+          schema:
+            type: integer
+            example: 2
+            required: true
       responses:
         "2oo":
           description: Succesfully fetched

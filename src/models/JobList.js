@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const jobListSchema = new Schema({
   id: {
-    type: Schema.Types.String,
+    type: Schema.Types.Number,
     required: true,
   },
   company: {
@@ -45,6 +45,32 @@ const jobListSchema = new Schema({
   },
   description: {
     type: Schema.Types.String,
+    required: true,
+  },
+  requirements: {
+    type: new Schema({
+      content: {
+        type: Schema.Types.String,
+        required: true,
+      },
+      items: {
+        type: Schema.Types.Array,
+        required: true,
+      },
+    }),
+    required: true,
+  },
+  role: {
+    type: new Schema({
+      content: {
+        type: Schema.Types.String,
+        required: true,
+      },
+      items: {
+        type: Schema.Types.Array,
+        required: true,
+      },
+    }),
     required: true,
   },
 });
