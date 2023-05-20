@@ -22,7 +22,6 @@ paths:
           schema:
             type: integer
             example: 6
-            required: true
         - name: page
           in: path
           description: The page number
@@ -30,7 +29,6 @@ paths:
           schema:
             type: integer
             example: 2
-            required: true
       responses:
         "2oo":
           description: Succesfully fetched

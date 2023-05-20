@@ -1,8 +1,8 @@
 import express from "express";
-import { getAllJobList } from "../controllers/devjobslist-controller.js";
+import { getJobListForPage } from "../controllers/devjobslist-controller.js";
 
 const jobListRouter = express.Router();
 
-jobListRouter.get("/joblist/:size/:page", getAllJobList);
-
+jobListRouter.get("/joblist/:size/:page", getJobListForPage);
+console.log(getJobListForPage);
 export default jobListRouter;

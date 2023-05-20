@@ -1,6 +1,12 @@
 import JobList from "../models/JobList.js";
 
-export const getAllJobList = async (req, res) => {
+export const getJobListForPage = async (req, res) => {
+  const size = req.params.size;
+  const page = req.params.page;
+
   const data = await JobList.find();
-  return res.json(data);
+
+  const jobsEachPage = data.slice(size * (page - 1), size * page);
+
+  return res.json(jobsEachPage);
 };
